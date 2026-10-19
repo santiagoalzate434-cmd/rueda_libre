@@ -1,0 +1,12 @@
+peticion de la pagina primera version : http://127.0.0.1:5500/index.html
+url completa : http://127.0.0.1:5500/index.html
+protocolo: http
+host: 127.0.0.1:5500
+puerto: 5500
+ruta: /index.html
+metodo de peticion: GET
+codigo de estado: 304 not modified
+
+/promociones.html: 200 GET
+
+el codigo de html me dara la estructura de la pagina, css me dara los estilos o el "decorado" y JS hara que la pagina sea interactiva
