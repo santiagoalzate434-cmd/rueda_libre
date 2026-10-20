@@ -10,3 +10,17 @@ codigo de estado: 304 not modified
 /promociones.html: 200 GET
 
 el codigo de html me dara la estructura de la pagina, css me dara los estilos o el "decorado" y JS hara que la pagina sea interactiva
+
+uso de vinculos rueda libre:
+ <table border="1">
+        <tr>
+            
+        <td> <a href="index.html" target="_self">inicio</a> </td>
+        </tr>
+        <tr>
+        <td> <a href="precios.html" target="_self">precios</a> </td>
+        </tr>
+        <tr>
+        <td> <a href="paginas/reservas.html" target="_self">reservas</a> </td>
+        </tr>
+    </table>
