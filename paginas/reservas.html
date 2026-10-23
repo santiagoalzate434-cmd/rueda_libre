@@ -34,13 +34,125 @@
             </ul>
 
         </nav>
+        
+        <section>
+            
+            <h2>Formulario de reservas</h2>
+            <fieldset>
+                <legend>información del cliente</legend>
+
+                    <form action="#" method="post">
+
+
+                        <label for ="nombre">nombre completo</label>
+                        <input type ="text " name="nombre" id="nombre" required>
+                        <br><br>
+
+                        <label for ="documento">documento de identidad</label>
+                        <input type ="number"
+                            name ="documento" 
+                             id="documento"
+                            required
+                            minlength="8"
+                            maxlength="10"
+                            pattern="[0-9]{8,10}"
+                            placeholder="ingresa documento de identidad"> 
+                        <br><br>
+
+                        <label for ="telefono">telefono</label>
+                        <input type ="number"
+                             name="telefono" 
+                             id="telefono" 
+                             required
+                             pattern="3[0-9]{9}"
+                             placeholder="ingresa un numero de telefono valido">
+                        <br><br>
+
+                        <label for ="correo">correo electronico</label>
+                        <input type ="email"
+                             name="correo" 
+                             id="correo" 
+                             required>
+
+                        <br><br>
+
+                    </form>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>información de la reserva</legend>
+                
+                    <form action="#" method="post">
+                        
+                        <label for ="tipo_bicicleta">tipo de bicicleta</label>
+                        <select name="tipo_bicicleta" id="tipo bicicleta" required>
+                            <option value="">selecciona un tipo</option>
+                            <option value="urbana">bicicleta urbana</option>
+                            <option value="montaña">bicicleta de montaña</option>
+                            <option value="electrica">bicicleta electrica</option>
+                        </select>
+
+                        <label for = "fecha">fecha de reserva</label>
+                        <input type ="date" name="fecha" id="fecha" required>
+                        <br><br>
+                        <label for = "horario">hora de reserva</label>
+                        <select name="horario" id="horario" required>
+                            <option value="">selecciona un horario</option>
+                            <option value="mañana">mañana (8:00 am - 12:00 pm)</option>
+                            <option value="tarde">tarde (12:00 pm - 6:00 pm)</option>
+                        </select>
+                        <br><br>
+
+                    </form>
+            </fieldset>
+            <fieldset>
+                <legend>cantidad de biciletas</legend>
+                
+                    <form action="#" method="post">
+                        <label for ="cantidad">cantidad de bicicletas</label>
+                        <input type ="number" 
+                        name="cantidad"
+                        id="cantidad"
+                        required
+                        min = 1
+                        max =6>
+                        <br><br>
+
+                    </form>
+            </fieldset>
+            <fieldset>
+                <legend>recorrido guiado</legend>
+                
+                    <form action="#" method="post">
+                        <label for ="recorrido">recorrido guiado</label>
+                        <select name="recorrido" id="recorrido" required>
+                            <option value="">selecciona un recorrido</option>
+                            <option value="urbano">rio y parques</option>
+                            <option value="montaña">sabores de barrio</option>
+                            <option value="electrica">reto las palmas</option>
+                        </select>
+                        <br><br>
+                        <input type="checkbox"
+                            name="terminos" 
+                            id="terminos"
+                            value="confirmacion" 
+                            required>
+                        <label for="terminos">acepto los terminos y condiciones</label>
+                        <br><br>
+                        <button type="submit">enviar reserva</button>
+
+                    </form>
+
+            </fieldset>
+                
+        </section>
    </header>
     
    <section>
        
       <h2>
 
-       <a href="hola@ruedalibre.example" target="_blank">RESERVA TU BICICLETA AQUÍ</a>
+       
       
       </h2>
 
@@ -75,13 +187,7 @@
             ver mapa aqui
             </a>
         </p>
-        
 
-        <p>
-
-            <a href="reservas.html" target="_self" style="font-size: 26px;" >reservar aqui</a> 
-
-        </p>
 
         <p>
 
