@@ -1,1 +1,186 @@
+:root {
+    --color-primary: #1E7A4F;
+    --color-primary-hover: #17613E;
 
+    --color-secondary: #F39A2B;
+    --color-secondary-hover: #D98216;
+
+    --color-heading: #14213D;
+    --color-background: #FAF6EF;
+    --color-text-secondary: #5B6470;
+
+    --color-card: #FFFFFF;
+    --color-border: #E6DFD4;
+
+    --border-radius: 12px;
+    --shadow-card: 0 4px 15px rgba(20, 33, 61, 0.10);
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Open Sans", Arial, sans-serif;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: var(--space-md);
+
+    font-family: var(--font-body);
+    font-weight: 400;
+
+    color: var(--color-heading);
+    background-color: var(--color-background);
+
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3
+{
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-heading);
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto 20px auto;
+    padding:10px;
+    text-align: center;}
+
+h1 {
+    margin-bottom: var(--space-lg);
+}
+
+h2,
+h3 {
+    margin-bottom: var(--space-md);
+}
+p {
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+.texto_secundario{
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+a {
+    color: var(--color-primary);
+}
+.boton-principal {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+
+    background-color: var(--color-primary);
+    color: var(--color-background);
+
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    border: none;
+    border-radius: var(--space-sm);
+
+    cursor: pointer;
+
+    transition: filter 0.2s ease;
+}
+.boton-principal:hover {
+    filter: brightness(0.9);
+}
+.boton-secundario {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+
+    background-color: var(--color-secondary);
+    color: var(--color-heading);
+
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    border: none;
+    border-radius: var(--space-sm);
+
+    cursor: pointer;
+
+    transition: filter 0.2s ease;
+}
+.boton-secundario:hover {
+    filter: brightness(0.95);
+}
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+}
+
+
+.precio_alquiler {
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 28px;
+
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+}
+.precio_alquiler caption
+{   margin-top: 0;
+    margin-bottom: 12px;
+
+    font-size: 1.5rem;
+    color: var(--color-heading);
+}
+.precio_alquiler p {
+    color: var(--color-text-secondary);
+}
+.recorridos_guiados {
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 28px;
+
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+}
+.recorridos_guiados caption
+{   margin-top: 0;
+    margin-bottom: 12px;
+
+    font-size: 1.5rem;
+    color: var(--color-heading);
+}
+.recorridos_guiados p {
+    color: var(--color-text-secondary);
+}
+.horarios {
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 28px;
+
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+}
+.horarios h2
+{   margin-top: 0;
+    margin-bottom: 12px;
+
+    font-size: 1.5rem;
+    color: var(--color-heading);
+}
+.horarios p{
+    color: var(--color-text-secondary);
+}
