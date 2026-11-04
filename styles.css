@@ -23,7 +23,9 @@
 
 }
 
-* { box-sizing: border-box; }
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
 body {
     margin: 0;
@@ -34,71 +36,31 @@ body {
 
     color: var(--color-heading);
     background-color: var(--color-background);
-
+    padding-bottom: 6rem;
     line-height: 1.6;
 }
-.encabezado{
-    display:flex;
-    justify-content: space-between;
-    border-radius: 15px;
-    height: 70px;
-    align-items: center;
-    background-color: var(--color-border);
-    padding-right: 5px;
-    padding-left: 5px;
-    
-}
 
-
-
-.navegacion ul {
-    display: flex;
-    align-items: center;
-    gap:30px;
-    list-style: none;
-    
-}
-
-.navegacion a{
-    text-decoration: none;
-    color:black;
-}
-.navegacion a:hover{
-    color: var(--color-secondary-hover)
-
-}
-
-
-
-h2,
-h3
-{
-    font-family: var(--font-heading);
-    font-weight: 700;
-    color: var(--color-heading);
-    width: 100%;
-    max-width: 420px;
-    margin: 40px auto 20px auto;
-    padding:10px;
-    text-align: center;}
-
-
-
-h2,
-h3 {
-    margin-bottom: var(--space-md);
-}
-p {
-    margin-bottom: var(--space-md);
-    text-align: center;
-}
-.texto_secundario{
-    color: var(--color-text-secondary);
-    font-weight: 400;
-}
 a {
     color: var(--color-primary);
 }
+
+
+
+a:focus-visible,
+  button:focus-visible {
+      outline: 3px solid var(--color-heading);
+      outline-offset: 3px;
+  }
+
+
+
+.bici-electrica {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
 .boton-principal {
     display: inline-block;
     padding: var(--space-sm) var(--space-lg);
@@ -141,19 +103,217 @@ a {
     transition: filter 0.2s ease;
 }
 .boton-secundario:hover {
-    filter: brightness(0.95);
-}
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 3px;
-}
+      background-color: var(--color-secondary-hover);
+      box-shadow: var(--shadow-card);
+  }
 
-
-.precio_alquiler {
-    width: 100%;
+.campo-check {
+    display: flex;
+    
+    justify-content: flex-start;
+    gap: var(--space-md);
     max-width: 420px;
-    margin: 40px auto;
+    margin: var(--space-lg) auto;
+    padding: var(--space-md);
+    background-color: var(--color-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.campo-check:hover {
+    border-color: var(--color-primary);
+}
+
+.campo-check:focus-within {
+    border-color: var(--color-heading);
+    box-shadow: 0 0 0 4px rgba(20, 33, 61, 0.30);
+}
+
+.campo-check input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.campo-check label {
+    color: var(--color-heading);
+    cursor: pointer;
+}
+
+.encabezado{
+    display:flex;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    min-height: 70px;
+    align-items: center;
+    background-color: var(--color-border);
+    padding-right: var(--space-md); 
+    padding-left: var(--space-md);
+    
+    
+}
+
+.formulario {
+    max-width: 36rem;
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+
+.campo-form {
+    margin-bottom: var(--space-lg);          
+}
+.campo-form label {
+    display: block;                          
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+
+.boton-cta {
+      display: inline-block;
+      padding: var(--space-md) var(--space-xl);
+      background-color: var(--color-primary);
+      color: var(--color-card);
+      border: none;
+      border-radius: var(--space-sm);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+  }
+  .boton-cta:hover { background-color: var(--color-primary-hover); }
+
+h2,
+h3
+{
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-heading);
+    width: 100%;
+    margin: 40px auto 20px auto;
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.imagen {
+    display: block;
+    width: 50%;
+    margin: var(--space-md) auto;
+    border-radius: var(--border-radius);
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-body);
+    color: var(--color-heading);
+    background-color: var(--color-card);
+    border: 2px solid var(--color-text-secondary);
+    border-radius: var(--space-sm);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--color-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none; /* quitamos el del navegador... */
+    border-color: var(--color-heading); /* ...y lo reemplazamos por borde + halo */
+    box-shadow: 0 0 0 4px rgba(20, 33, 61, 0.30);
+}
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+
+
+
+.navegacion ul {
+    display: flex;
+    align-items: center;
+    gap:30px;
+    list-style: none;
+    
+}
+
+.navegacion a{
+    text-decoration: none;
+    color:var(--color-heading);
+}
+.navegacion a:hover{
+    color: var(--color-primary-hover);
+
+}
+
+
+#portada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: var(--space-xl) auto;
+    min-height: 60vh;               
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+    background-color: var(--color-card);
+    border-radius: var(--border-radius);
+
+    background-image: url("img/ruta.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.piepg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--space-md);
+    background-color: var(--color-card);
+    border-top: 1px solid var(--color-border);
+}
+
+
+p {
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.texto_secundario{
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+.tarjeta-horario{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: var(--space-xl) auto;
     padding: 28px;
 
     background-color: var(--color-card);
@@ -161,20 +321,12 @@ button:focus-visible {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-card);
 }
-.precio_alquiler caption
-{   margin-top: 0;
-    margin-bottom: 12px;
 
-    font-size: 1.5rem;
-    color: var(--color-heading);
-}
-.precio_alquiler p {
-    color: var(--color-text-secondary);
-}
-.recorridos_guiados {
+
+.tarjeta {
     width: 100%;
-    max-width: 420px;
-    margin: 40px auto;
+    max-width: 700px;
+    margin: var(--space-xl) auto;
     padding: 28px;
 
     background-color: var(--color-card);
@@ -182,36 +334,75 @@ button:focus-visible {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-card);
 }
-.recorridos_guiados caption
-{   margin-top: 0;
-    margin-bottom: 12px;
 
+.tarjeta caption,
+.tarjeta h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
     font-size: 1.5rem;
-    color: var(--color-heading);
 }
-.recorridos_guiados p {
+
+.tarjeta p {
     color: var(--color-text-secondary);
 }
-.horarios {
-    width: 100%;
-    max-width: 420px;
-    margin: 40px auto;
-    padding: 28px;
 
+.tarjeta-servicio {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);          /* separación entre tarjetas */
     background-color: var(--color-card);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border);   /* px solo en el borde */
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-card);
 }
-.horarios h2
-{   margin-top: 0;
-    margin-bottom: 12px;
 
-    font-size: 1.5rem;
-    color: var(--color-heading);
+.tarjeta-servicio img {
+    display: block;
+    object-position: center;
+    height: 35rem;
+    object-fit: cover;
+    width: 100%;                             /* todo el ancho de la tarjeta */
+    margin-bottom: var(--space-md);
+    border-radius: var(--border-radius);
 }
-.horarios p{
-    color: var(--color-text-secondary);
+
+.tarjeta-servicio h3 {
+    max-width: none;
+    margin: 0 0 var(--space-sm);
+    padding: 0;
 }
 
 
+table {
+    width: 100%;
+    margin: var(--space-lg) 0;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-card);                /* blanco */
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--color-background);
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
