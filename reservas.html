@@ -37,6 +37,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="flota.html" class="boton-secundario">
+                        ver nuestra flota
+                    </a>
+                </li>
+
             </ul>
 
         </nav>
@@ -47,7 +53,7 @@
             
             <h2>Formulario de reservas</h2>
         
-
+                    <div class="reservas-layout">
                     <form class = "formulario" action="#" method="post">
 
                         <div class="campo-form">
@@ -55,37 +61,21 @@
                             <input type ="text " name="nombre" id="nombre" required>
                             <br><br>
                         </div>
-                        
-                        <div class="campo-form">
-                            <label for ="documento">documento de identidad</label>
-                            <input type ="number"
-                                name ="documento" 
-                                id="documento"
-                                required
-                                minlength="8"
-                                maxlength="10"
-                                pattern="[0-9]{8,10}"
-                                placeholder="ingresa documento de identidad"> 
-                            <br><br>
+                        <div class="fila-form">
+                            <div class="grupo-form">
+                                <label for="documento">Documento de identidad</label>
+                                <input type="text" inputmode="numeric" pattern="[0-9]{8,10}" name="documento" id="documento" required placeholder="Ej: 1020304050">
+                            </div>
                         </div>
 
-                        <div class="campo-form">
-
-                            <label for ="telefono">telefono</label>
-                            <input type ="tel"
-                                name="telefono" 
-                                id="telefono" 
-                                required
-                                pattern="3[0-9]{9}"
-                                placeholder="ingresa un numero de telefono valido">
-                            <br><br>
+                        <div class="grupo-form">
+                            <label for="telefono">Celular</label>
+                            <input type="tel" pattern="3[0-9]{9}" name="telefono" id="telefono" required placeholder="Ej: 3001234567">
                         </div>
+
                         <div class="campo-form">
                             <label for ="correo">correo electronico</label>
-                            <input type ="email"
-                                 name="correo" 
-                                 id="correo" 
-                                 required>
+                            <input type ="email" name="correo" id="correo" required>
 
                             <br><br>
                         </div>
@@ -153,17 +143,31 @@
                         <button type="submit" class="boton-cta">enviar reserva</button>
 
                     </form>
-                   
-            
+                    
+                    <aside class="info-contacto">
+                    
+                        <h3>Contacto</h3>
+                        <ul class="pie-lista">
+                            <li><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></li>
+                            <li>Cra 65 # 41-44, Medellín</li>
+                            <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        </ul>
 
-            
+                        <h3>Horario</h3>
+                        <dl>
+                            <dt>Lunes a viernes</dt>
+                            <dd>8:00 am - 6:00 pm</dd>
+                            <dt>Sábado</dt>
+                            <dd>9:00 am - 5:00 pm</dd>
+                            <dt>Domingo</dt>
+                            <dd>10:00 am - 4:00 pm</dd>
+                        </dl>
+                    </aside>
+                    
+    </section>
 
-                
-        </section>
-   
-   
     <section class="tarjeta-horario">
-      <h2>horario de atención</h2>
+    <h2>horario de atención</h2>
         <dl>
             <dt>Lunes a viernes</dt>
             <dd>8:00 am - 6:00 pm</dd>

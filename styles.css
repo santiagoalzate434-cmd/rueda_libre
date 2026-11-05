@@ -158,6 +158,12 @@ a:focus-visible,
     
 }
 
+.flota-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-lg);               
+}
+
 .formulario {
     max-width: 36rem;
     margin: var(--space-xl) auto;
@@ -273,21 +279,39 @@ main {
 
 
 #portada {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;      /* dos columnas iguales */
+    align-items: center;                 /* texto centrado verticalmente */
+    gap: var(--space-xl);
+    min-height: 60vh;
     margin: var(--space-xl) auto;
-    min-height: 60vh;               
-    padding: var(--space-xl) var(--space-md);
-    text-align: center;
+    padding: var(--space-xl);
     background-color: var(--color-card);
     border-radius: var(--border-radius);
+}
 
-    background-image: url("img/ruta.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.portada-texto h2 {
+    margin-top: 0;
+    text-align: left;
+}
+
+.portada-texto p {
+    text-align: left;
+}
+
+.portada-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.portada-foto {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 24rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
 }
 
 
@@ -333,6 +357,87 @@ main {
 p {
     margin-bottom: var(--space-md);
     text-align: center;
+}
+
+.reservas-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;       /* proporción 2:1 */
+    align-items: start;                   /* cada bloque con su propia altura */
+    gap: var(--space-xl);
+}
+
+.reservas-layout .formulario {
+    max-width: none;                      /* que llene sus 2fr */
+    margin: 0;
+}
+
+.info-contacto {
+    padding: var(--space-lg);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+}
+
+.info-contacto h3 {
+    margin: 0 0 var(--space-md);
+    text-align: left;
+}
+
+.info-contacto h3:not(:first-child) {
+    margin-top: var(--space-lg);
+}
+
+.info-contacto .pie-lista {
+    margin-bottom: var(--space-md);
+}
+
+.tarjeta-modelo {
+    display: flex;
+    flex-direction: column;             /* contenido apilado */
+    padding: var(--space-lg);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+}
+
+.tarjeta-modelo img {
+    display: block;
+    width: 100%;
+    height: 10rem;
+    margin-bottom: var(--space-md);
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.tarjeta-modelo h3 {
+    margin: 0 0 var(--space-sm);
+    font-size: 1.25rem;
+}
+
+.modelo-descripcion {
+    flex-grow: 1;                       /* absorbe el espacio libre */
+    margin: 0 0 var(--space-md);
+    color: var(--color-text-secondary);
+}
+
+.modelo-precio {
+    margin: 0 0 var(--space-md);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-heading);
+}
+
+.modelo-precio span {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+.tarjeta-modelo .boton-secundario {
+    margin-top: auto;                   /* respaldo: empuja el botón al final */
 }
 
 .texto_secundario{
