@@ -1,208 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reservas | Rueda libre</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Reservas | Rueda libre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a href="//wa.me/573103456789" class="whatsapp" target="_blank" rel="noopener noreferrer">whatsapp</a>
-   <header class="encabezado">
-
-      <h1>Reserva tu bicicleta</h1>
-      <nav class="navegacion">
-
-            <ul>
-                
-                <li>
-                    <a href="index.html" target="_self">
-                        inicio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="precios.html" target="_self">
-                        precios
-                    </a>
-                </li>
-
-                <li>
-                    <a href="reservas.html" target="_self">
-                        reservas
-                    </a>
-                </li>
-
-                <li>
-                    <a href="flota.html" class="boton-secundario">
-                        ver nuestra flota
-                    </a>
-                </li>
-
-            </ul>
-
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Rueda libre</a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal"
+                        aria-expanded="false"
+                        aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="precios.html">Precios</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="reservas.html" aria-current="page">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#flota">Flota</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        
     </header>
-    
-    <section>
-            
-            <h2>Formulario de reservas</h2>
-        
-                    <div class="reservas-layout">
-                    <form class = "formulario" action="#" method="post">
 
-                        <div class="campo-form">
-                            <label for ="nombre">nombre completo</label>
-                            <input type ="text " name="nombre" id="nombre" required>
-                            <br><br>
-                        </div>
-                        <div class="fila-form">
-                            <div class="grupo-form">
-                                <label for="documento">Documento de identidad</label>
-                                <input type="text" inputmode="numeric" pattern="[0-9]{8,10}" name="documento" id="documento" required placeholder="Ej: 1020304050">
-                            </div>
-                        </div>
+    <main class="container py-4">
+        <h1 class="text-center mb-4">Reserva tu bicicleta</h1>
 
-                        <div class="grupo-form">
-                            <label for="telefono">Celular</label>
-                            <input type="tel" pattern="3[0-9]{9}" name="telefono" id="telefono" required placeholder="Ej: 3001234567">
-                        </div>
+        <div class="reservas-layout">
 
-                        <div class="campo-form">
-                            <label for ="correo">correo electronico</label>
-                            <input type ="email" name="correo" id="correo" required>
+            <form class="formulario" action="#" method="post">
+                <div class="campo-form">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                </div>
 
-                            <br><br>
-                        </div>
-                        
-                        <div class="campo-form">
-                            <label for ="tipo_bicicleta">tipo de bicicleta</label>
-                            
-                                <select name="tipo_bicicleta" id="tipo_bicicleta" required>
-                                    <option value="">selecciona un tipo</option>
-                                    <option value="urbana">bicicleta urbana</option>
-                                    <option value="montaña">bicicleta de montaña</option>
-                                    <option value="electrica">bicicleta electrica</option>
-                                </select>
-                                <br><br>
-                        </div>
+                <div class="campo-form">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" autocomplete="email" required>
+                </div>
 
-                        <div class="campo-form">
-                            <label for = "fecha">fecha de reserva</label>
-                            <input type ="date" name="fecha" id="fecha" required>
-                            <br><br>
-                        </div>
+                <div class="fila-form">
+                    <div class="campo-form">
+                        <label for="documento">Documento</label>
+                        <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,12}" required>
+                    </div>
+                    <div class="campo-form">
+                        <label for="telefono">Celular</label>
+                        <input type="tel" id="telefono" name="telefono" inputmode="tel" autocomplete="tel" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
 
-                        <div class="campo-form">
-                            <label for = "horario">hora de reserva</label>
-                            <select name="horario" id="horario" required>
-                                <option value="">selecciona un horario</option>
-                            <option value="mañana">mañana (8:00 am - 12:00 pm)</option>
-                            <option value="tarde">tarde (12:00 pm - 6:00 pm)</option>
-                            </select>
-                            <br><br>
-                        </div>
+                <div class="campo-form">
+                    <label for="bicicleta">Bicicleta</label>
+                    <select id="bicicleta" name="bicicleta" required>
+                        <option value="">Selecciona un modelo</option>
+                        <option value="urbana-clasica">Urbana Clásica</option>
+                        <option value="urbana-plegable">Urbana Plegable</option>
+                        <option value="montana-trail">Montaña Trail</option>
+                        <option value="gravel-aventura">Gravel Aventura</option>
+                        <option value="electrica-urbana">Eléctrica Urbana</option>
+                        <option value="infantil">Infantil</option>
+                        <option value="tandem">Tándem</option>
+                    </select>
+                </div>
 
-                        <div class="campo-form">
+                <div class="campo-form">
+                    <label for="recorrido">Recorrido guiado (opcional)</label>
+                    <select id="recorrido" name="recorrido">
+                        <option value="">Sin recorrido</option>
+                        <option value="centro-historico">Centro histórico</option>
+                        <option value="ciclorruta-rio">Ciclorruta del río</option>
+                        <option value="mirador-atardecer">Mirador al atardecer</option>
+                    </select>
+                </div>
 
-                            <label for ="cantidad">cantidad de bicicletas</label>
-                            <input type ="number" 
-                            name="cantidad"
-                            id="cantidad"
-                            required
-                            min = 1
-                            max =6>
-                            <br><br>
-                        </div>
+                <div class="campo-form">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
 
-                        <div class="campo-form">
-                            <label for ="recorrido">recorrido guiado</label>
-                            <select name="recorrido" id="recorrido" required>
-                                <option value="">selecciona un recorrido</option>
-                                <option value="urbano">rio y parques</option>
-                                <option value="montaña">sabores de barrio</option>
-                                <option value="electrica">reto las palmas</option>
-                            </select>
-                            <br><br>
-                        </div>
-                        <div class="campo-check">
-                            <input type="checkbox"
-                            name="terminos" 
-                            id="terminos"
-                            value="confirmacion" 
-                            required>
-                            <label for="terminos">acepto los terminos y condiciones</label>
-                                    
-                        </div>
-                        
-                        <button type="submit" class="boton-cta">enviar reserva</button>
+                <div class="campo-check">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones del alquiler.</label>
+                </div>
 
-                    </form>
-                    
-                    <aside class="info-contacto">
-                    
-                        <h3>Contacto</h3>
-                        <ul class="pie-lista">
-                            <li><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></li>
-                            <li>Cra 65 # 41-44, Medellín</li>
-                            <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                        </ul>
+                <button type="submit" class="btn btn-success btn-lg">Confirmar reserva</button>
+            </form>
 
-                        <h3>Horario</h3>
-                        <dl>
-                            <dt>Lunes a viernes</dt>
-                            <dd>8:00 am - 6:00 pm</dd>
-                            <dt>Sábado</dt>
-                            <dd>9:00 am - 5:00 pm</dd>
-                            <dt>Domingo</dt>
-                            <dd>10:00 am - 4:00 pm</dd>
-                        </dl>
-                    </aside>
-                    
-    </section>
+            <aside class="info-contacto">
+                <h3>Horario de atención</h3>
+                <p class="texto_secundario text-start">Lunes a domingo, de 8:00 a.m. a 6:00 p.m.</p>
 
-    <section class="tarjeta-horario">
-    <h2>horario de atención</h2>
-        <dl>
-            <dt>Lunes a viernes</dt>
-            <dd>8:00 am - 6:00 pm</dd>
-            <dt>Sábado</dt>
-            <dd>9:00 am - 5:00 pm</dd>
-            <dt>Domingo</dt>
-            <dd>10:00 am - 4:00 pm</dd>
+                <h3>Contacto</h3>
+                <ul class="pie-lista">
+                    <li><a href="mailto:hola@ruedalibre.co">hola@ruedalibre.co</a></li>
+                    <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                </ul>
 
-        </dl>    
-   </section>
-   
-   <footer class="pie texto_secundario">
-    <div class="pie-bloque">
-        <p class="logo">Rueda libre</p>
-        <p>Movilidad limpia, saludable y sostenible en Medellín.</p>
-    </div>
+                <h3>¿Dudas con los precios?</h3>
+                <a href="precios.html" class="btn btn-outline-success">Consultar precios</a>
+            </aside>
 
-    <div class="pie-bloque">
-        <h2>Contáctanos</h2>
-        <ul class="pie-lista">
-            <li><a href="mailto:hola@ruedalibre.example">Contactar por correo</a></li>
-            <li><a href="https://www.bing.com/maps?q=Cra+65+%2341-44+Medell%C3%ADn" target="_blank" rel="noopener noreferrer">Ver mapa aquí</a></li>
-            <li><a href="reservas.html">Reservar aquí</a></li>
-        </ul>
-    </div>
+        </div>
+    </main>
 
-    <div class="pie-bloque">
-        <h2>Horario</h2>
-        <ul class="pie-lista">
-            <li>Lunes a viernes: 8:00 am - 6:00 pm</li>
-            <li>Sábado: 9:00 am - 5:00 pm</li>
-            <li>Domingo: 10:00 am - 4:00 pm</li>
-        </ul>
-    </div>
-</footer>
+    <footer class="pie">
+        <div class="pie-bloque">
+            <h2>Rueda libre</h2>
+            <p>Alquiler de bicicletas y recorridos guiados.</p>
+        </div>
+        <div class="pie-bloque">
+            <h2>Navegación</h2>
+            <ul class="pie-lista">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </div>
+        <div class="pie-bloque">
+            <h2>Contacto</h2>
+            <p>hola@ruedalibre.co<br>Lunes a domingo, 8:00 a.m. – 6:00 p.m.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
-
 </html>

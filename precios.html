@@ -1,190 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Precios | Rueda libre</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>tablas de precios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <a href="//wa.me/573103456789" class="whatsapp" target="_blank" rel="noopener noreferrer">whatsapp</a>
-    <header class="encabezado">
-
-        <h1>Consulta nuestros precios</h1>
-
-        <nav class="navegacion">
-
-            <ul>
-
-                <li>
-                    <a href="index.html" target="_self">
-                        inicio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="precios.html" target="_self">
-                        precios
-                    </a>
-                </li>
-
-                <li>
-                    <a href="reservas.html" target="_self">
-                        reservas
-                    </a>
-                    </il>
-                    
-                    <li>
-                        <a href="flota.html" class="boton-secundario">
-                        ver nuestra flota
-                        </a>
-                    </li>
-
-            </ul>
-
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">Rueda libre</a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuPrincipal"
+                        aria-controls="menuPrincipal"
+                        aria-expanded="false"
+                        aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="precios.html" aria-current="page">Precios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#flota">Flota</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-
     </header>
 
-    <main>
+    <main class="container py-4">
+        <h1 class="text-center">Precios</h1>
 
-        <section id="bicicletas_alquiler" class="tarjeta">
-
-            <h2>nuevas bicicletas electricas</h2>
-            <p>disfruta de la ciudad con nuestras bicicletas electricas, ideales para recorrer largas distancias sin
-                esfuerzo.</p>
-
-            <section class="bici-electrica">
-                <p>
-                    <a href="reservas.html" class="boton-principal">
-                        reservar aqui
-                    </a>
-                </p>
-                <p>
-                    <a href="vermodelo.html" class="boton-principal">
-                        ver modelos disponibles
-                    </a>
-                </p>
-            </section>
-
-        </section>
-        
-        
-
-       
-        <section class="tarjeta">
-
-            <table id="precio_alquiler" border="1">
-                <caption>Tabla de precios</caption>
-
-                <tr>
-                    <th>tipo de bicicleta</th>
-                    <th>1 hora</th>
-                    <th>medio dia (4 horas)</th>
-                    <th>dia completo</th>
-                </tr>
-                <tr>
-                    <td>urbana</td>
-                    <td>$10.000</td>
-                    <td>$30.000</td>
-                    <td>$50.000</td>
-                </tr>
-                <tr>
-                    <td>montaña</td>
-                    <td>$15.000</td>
-                    <td>$45.000</td>
-                    <td>$75.000</td>
-                </tr>
-                <tr>
-                    <td>electrica</td>
-                    <td>$25.000</td>
-                    <td>$75.000</td>
-                    <td>$115.000</td>
-                </tr>
-
-            </table>
-
-            <p>nota: los <strong>precios</strong> pueden variar según la temporada y la disponibilidad.
-                todos los viajes tienen incluido casco y candado
-            </p>
-
+        <section id="precio_alquiler" class="tarjeta">
+            <div class="table-responsive">
+                <table>
+                    <caption>Alquiler de bicicletas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Por hora</th>
+                            <th scope="col">Día completo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Urbana Clásica</th><td>$10.000</td><td>$45.000</td></tr>
+                        <tr><th scope="row">Urbana Plegable</th><td>$12.000</td><td>$55.000</td></tr>
+                        <tr><th scope="row">Montaña Trail</th><td>$15.000</td><td>$70.000</td></tr>
+                        <tr><th scope="row">Gravel Aventura</th><td>$18.000</td><td>$80.000</td></tr>
+                        <tr><th scope="row">Eléctrica Urbana</th><td>$25.000</td><td>$110.000</td></tr>
+                        <tr><th scope="row">Infantil</th><td>$8.000</td><td>$35.000</td></tr>
+                        <tr><th scope="row">Tándem</th><td>$20.000</td><td>$90.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center">
+                <a href="reservas.html" class="btn btn-success">Reservar</a>
+            </div>
         </section>
 
-        <section class="tarjeta">
-
-            <table id="recorridos_guiados" border="1">
-                <caption>Recorridos guiados</caption>
-                <tr>
-                    <th>recorrido</th>
-                    <th>distancia</th>
-                    <th>duracion</th>
-                    <th>nivel</th>
-                    <th>precio por persona</th>
-                </tr>
-                <tr>
-                    <td>rio y parques</td>
-                    <td>10 km</td>
-                    <td>2 horas</td>
-                    <td>bajo</td>
-                    <td>$20.000</td>
-
-                </tr>
-                <tr>
-                    <td>sabores de barrio</td>
-                    <td>20 km</td>
-                    <td>4 horas</td>
-                    <td>medio</td>
-                    <td>$40.000</td>
-                </tr>
-                <tr>
-                    <td>reto las palmas</td>
-                    <td>30 km</td>
-                    <td>6 horas</td>
-                    <td>alto</td>
-                    <td>$60.000</td>
-                </tr>
-            </table>
-
-            <p>
-                nota: los <strong>horarios</strong> de salida pueden variar según la temporada y la disponibilidad.
-                todos los viajes tienen incluido casco y candado. se debe llevar por parte del cliente agua y
-                refrigerio.
-                se recomienda llevar ropa comoda y deportiva, bloqueador solar y gorra.
-
-            </p>
-
+        <section id="recorridos_guiados" class="tarjeta">
+            <div class="table-responsive">
+                <table>
+                    <caption>Recorridos guiados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Recorrido</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Precio por persona</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Centro histórico</th><td>2 horas</td><td>$40.000</td></tr>
+                        <tr><th scope="row">Ciclorruta del río</th><td>3 horas</td><td>$55.000</td></tr>
+                        <tr><th scope="row">Mirador al atardecer</th><td>3 horas</td><td>$65.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center">
+                <a href="reservas.html" class="btn btn-outline-success">Consultar disponibilidad</a>
+            </div>
         </section>
     </main>
-    <footer class="pie texto_secundario">
-        <div class="pie-bloque">
-            <p class="logo">Rueda libre</p>
-            <p>Movilidad limpia, saludable y sostenible en Medellín.</p>
-        </div>
 
+    <footer class="pie">
         <div class="pie-bloque">
-            <h2>Contáctanos</h2>
+            <h2>Rueda libre</h2>
+            <p>Alquiler de bicicletas y recorridos guiados.</p>
+        </div>
+        <div class="pie-bloque">
+            <h2>Navegación</h2>
             <ul class="pie-lista">
-                <li><a href="mailto:hola@ruedalibre.example">Contactar por correo</a></li>
-                <li><a href="https://www.bing.com/maps?q=Cra+65+%2341-44+Medell%C3%ADn" target="_blank" rel="noopener noreferrer">Ver mapa aquí</a></li>
-                <li><a href="reservas.html">Reservar aquí</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
             </ul>
         </div>
-
         <div class="pie-bloque">
-            <h2>Horario</h2>
-            <ul class="pie-lista">
-                <li>Lunes a viernes: 8:00 am - 6:00 pm</li>
-                <li>Sábado: 9:00 am - 5:00 pm</li>
-                <li>Domingo: 10:00 am - 4:00 pm</li>
-            </ul>
+            <h2>Contacto</h2>
+            <p>hola@ruedalibre.co<br>Lunes a domingo, 8:00 a.m. – 6:00 p.m.</p>
         </div>
     </footer>
-    </body>
+
+    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
 </html>
