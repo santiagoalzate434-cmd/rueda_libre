@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-marca">
             <div class="container">
-                <a class="navbar-brand logo" href="index.html">Rueda libre</a>
+                <a class="navbar-brand logo" href="index.html"><i class="bi bi-bicycle me-2" aria-hidden="true"></i>Rueda libre</a>
                 <button class="navbar-toggler" type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#menuPrincipal"
@@ -25,10 +26,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="precios.html">Precios</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="reservas.html" aria-current="page">Reservas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#flota">Flota</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house me-1" aria-hidden="true"></i>Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="precios.html"><i class="bi bi-tag me-1" aria-hidden="true"></i>Precios</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="reservas.html" aria-current="page"><i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#flota"><i class="bi bi-bicycle me-1" aria-hidden="true"></i>Flota</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,33 +39,43 @@
     <main class="container py-4">
         <h1 class="text-center mb-4">Reserva tu bicicleta</h1>
 
-        <div class="reservas-layout">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>Recuerda:</strong> trae tu documento de identidad original para recoger la bicicleta.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar aviso"></button>
+        </div>
 
-            <form class="formulario" action="#" method="post">
-                <div class="campo-form">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+        <div class="row g-4">
+
+            <div class="col-12 col-lg-8">
+            <form class="formulario needs-validation" action="#" method="post" novalidate>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name" minlength="3" maxlength="60" required>
+                    <div class="invalid-feedback">Escribe tu nombre completo (mínimo 3 letras).</div>
                 </div>
 
-                <div class="campo-form">
-                    <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="correo" autocomplete="email" required>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" autocomplete="email" required>
+                    <div class="invalid-feedback">Escribe un correo válido, por ejemplo nombre@correo.com.</div>
                 </div>
 
-                <div class="fila-form">
-                    <div class="campo-form">
-                        <label for="documento">Documento</label>
-                        <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,12}" required>
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
+                        <label for="documento" class="form-label">Documento</label>
+                        <input type="text" class="form-control" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,12}" required>
+                        <div class="invalid-feedback">Escribe solo números, entre 6 y 12 dígitos, sin puntos ni espacios.</div>
                     </div>
-                    <div class="campo-form">
-                        <label for="telefono">Celular</label>
-                        <input type="tel" id="telefono" name="telefono" inputmode="tel" autocomplete="tel" pattern="[0-9]{10}" required>
+                    <div class="col-12 col-md-6">
+                        <label for="telefono" class="form-label">Celular</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" inputmode="tel" autocomplete="tel" pattern="[0-9]{10}" required>
+                        <div class="invalid-feedback">Escribe los 10 dígitos de tu celular, sin espacios ni guiones.</div>
                     </div>
                 </div>
 
-                <div class="campo-form">
-                    <label for="bicicleta">Bicicleta</label>
-                    <select id="bicicleta" name="bicicleta" required>
+                <div class="mb-3">
+                    <label for="bicicleta" class="form-label">Bicicleta</label>
+                    <select class="form-select" id="bicicleta" name="bicicleta" required>
                         <option value="">Selecciona un modelo</option>
                         <option value="urbana-clasica">Urbana Clásica</option>
                         <option value="urbana-plegable">Urbana Plegable</option>
@@ -74,11 +85,12 @@
                         <option value="infantil">Infantil</option>
                         <option value="tandem">Tándem</option>
                     </select>
+                    <div class="invalid-feedback">Elige el modelo de bicicleta que quieres alquilar.</div>
                 </div>
 
-                <div class="campo-form">
-                    <label for="recorrido">Recorrido guiado (opcional)</label>
-                    <select id="recorrido" name="recorrido">
+                <div class="mb-3">
+                    <label for="recorrido" class="form-label">Recorrido guiado (opcional)</label>
+                    <select class="form-select" id="recorrido" name="recorrido">
                         <option value="">Sin recorrido</option>
                         <option value="centro-historico">Centro histórico</option>
                         <option value="ciclorruta-rio">Ciclorruta del río</option>
@@ -86,32 +98,40 @@
                     </select>
                 </div>
 
-                <div class="campo-form">
-                    <label for="fecha">Fecha</label>
-                    <input type="date" id="fecha" name="fecha" required>
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                    <div class="invalid-feedback">Elige una fecha desde hoy y hasta dentro de 90 días.</div>
                 </div>
 
-                <div class="campo-check">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos">Acepto los términos y condiciones del alquiler.</label>
+                <div class="mb-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terminos" name="terminos" required>
+                        <label class="form-check-label" for="terminos">Acepto las políticas de alquiler.</label>
+                        <div class="invalid-feedback">Debes aceptar las políticas para poder reservar.</div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#modalPoliticas">Leer políticas de alquiler</button>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg">Confirmar reserva</button>
+                <button type="submit" class="btn btn-primary btn-lg">Confirmar reserva</button>
             </form>
+            </div>
 
+            <div class="col-12 col-lg-4">
             <aside class="info-contacto">
-                <h3>Horario de atención</h3>
+                <h3><i class="bi bi-clock me-2" aria-hidden="true"></i>Horario de atención</h3>
                 <p class="texto_secundario text-start">Lunes a domingo, de 8:00 a.m. a 6:00 p.m.</p>
 
                 <h3>Contacto</h3>
                 <ul class="pie-lista">
-                    <li><a href="mailto:hola@ruedalibre.co">hola@ruedalibre.co</a></li>
-                    <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                    <li><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:hola@ruedalibre.co">hola@ruedalibre.co</a></li>
+                    <li><i class="bi bi-whatsapp me-2" aria-hidden="true"></i><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                 </ul>
 
                 <h3>¿Dudas con los precios?</h3>
-                <a href="precios.html" class="btn btn-outline-success">Consultar precios</a>
+                <a href="precios.html" class="btn btn-outline-primary">Consultar precios</a>
             </aside>
+            </div>
 
         </div>
     </main>
@@ -131,12 +151,72 @@
         </div>
         <div class="pie-bloque">
             <h2>Contacto</h2>
-            <p>hola@ruedalibre.co<br>Lunes a domingo, 8:00 a.m. – 6:00 p.m.</p>
+            <ul class="pie-lista">
+                <li><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:hola@ruedalibre.co">hola@ruedalibre.co</a></li>
+                <li><i class="bi bi-clock me-2" aria-hidden="true"></i>Lunes a domingo, 8:00 a.m. – 6:00 p.m.</li>
+            </ul>
         </div>
     </footer>
 
-    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <div class="modal fade" id="modalPoliticas" tabindex="-1" aria-labelledby="tituloPoliticas" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="tituloPoliticas">Políticas de alquiler</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ol class="mb-0">
+                        <li>Presenta tu documento de identidad original al recoger la bicicleta.</li>
+                        <li>Revisa la bicicleta con el asesor antes de salir.</li>
+                        <li>Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li>
+                        <li>Los daños por mal uso se cobran según el costo de la reparación.</li>
+                        <li>Los menores de edad deben estar acompañados por un adulto responsable.</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/573000000000" class="whatsapp" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-2" aria-hidden="true"></i>WhatsApp</a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+    // Ejemplo de JavaScript de inicio de la documentación de Bootstrap para validación
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    </script>
+
+    <script>
+    // Fecha: desde hoy hasta 90 días (reglas nativas min y max)
+    (() => {
+      const fecha = document.getElementById('fecha')
+      const f = d => d.toLocaleDateString('en-CA')
+      const hoy = new Date()
+      const limite = new Date()
+      limite.setDate(hoy.getDate() + 90)
+      fecha.min = f(hoy)
+      fecha.max = f(limite)
+    })()
+    </script>
 </body>
 </html>
